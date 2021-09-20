@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('guest.home');
-});
+
 
 Auth::routes();
 
@@ -24,4 +22,6 @@ Route::middleware('auth')->namespace('Admin')->prefix('admin')->name('admin.')
     // pagina di atterraggio dopo il login (con il prefisso, l'url è '/admin')
         Route::get('/', 'HomeController@index')->name('index');
         Route::resource('/posts', 'PostController');
-    });
+});
+
+Route::get('/{any?}', 'HomeController@index')->where('any', '.*');
