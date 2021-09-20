@@ -11,7 +11,7 @@
             <hr>
             <p class="card-text">{{ post.description }}</p>
           </div>
-          <button class="btn btn-button">Dettagli</button>
+          <router-link :to="{ name: 'dettagli', params:{ slug: post.slug }}" class="btn btn-button">Dettagli</router-link>
         </div>
 
       </div>
@@ -123,7 +123,7 @@ export default {
         }
     }
 
-    button{
+    .btn{
       color: white;
       &:hover{
         background-color: rgb(160, 160, 160);
