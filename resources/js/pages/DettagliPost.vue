@@ -15,6 +15,11 @@
           </span>
         </div>
       </div>
+      <div class="container">
+        <button>
+          <router-link :to="{ name: 'posts'}" >Back</router-link>
+        </button>
+      </div>
       
 
   </div>
